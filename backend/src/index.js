@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import uploadRoute from "./routes/upload.js";
 import visionRoute from "./routes/vision.js";
+import llmRoute from "./routes/llm.js";
+import incidentRoute from "./routes/incident.js";
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ app.use((req, res, next) => {
 
 app.use("/api", uploadRoute);
 app.use("/api/vision", visionRoute);
+app.use("/api/llm", llmRoute);
+app.use("/api/incident", incidentRoute);
 
 app.get("/", (req, res) => {
   res.json({ status: "CityPulse backend running" });

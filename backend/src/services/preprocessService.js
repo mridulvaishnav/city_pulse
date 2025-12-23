@@ -7,6 +7,12 @@ import { isVideo, isImage } from "../utils/mediaUtils.js";
  * Main preprocess function
  */
 export async function preprocessMedia(localFilePath, mimeType) {
+  // Handle missing mimeType
+  if (!mimeType) {
+    console.log("⚠️ No mimeType provided, treating as image");
+    return preprocessImage(localFilePath);
+  }
+  
   if (isImage(mimeType)) {
     return preprocessImage(localFilePath);
   }
@@ -15,7 +21,9 @@ export async function preprocessMedia(localFilePath, mimeType) {
     return await preprocessVideo(localFilePath);
   }
 
-  throw new Error("Unsupported media type");
+  // Default to treating as image for unknown types
+  console.log("⚠️ Unknown media type:", mimeType, "- treating as image");
+  return preprocessImage(localFilePath);
 }
 
 /**

@@ -7,6 +7,9 @@ import { deleteLocalFile } from "../utils/fileUtils.js";
 import { extractTextFromFrames } from "../services/ocrService.js";
 import { analyzeFrames, categorizeDisasters, getEmergencyRecommendations } from "../services/visionService.js";
 import { generateSnippets } from "../services/snippetService.js";
+import { analyzeIncident } from "../services/llmService.js";
+import { createIncident } from "../services/incidentService.js";
+import { logHeader, logStep, logSuccess, logSummary } from "../utils/logger.js";
 
 const router = express.Router();
 
@@ -15,6 +18,7 @@ const upload = multer({ dest: "tmp/" });
 
 router.post("/upload", upload.single("file"), async (req, res) => {
   try {
+    logHeader("🚀 NEW UPLOAD REQUEST");
     console.log("📁 Upload request received");
 
     // 1. Validate file
@@ -33,58 +37,81 @@ router.post("/upload", upload.single("file"), async (req, res) => {
     });
 
     // 2. STEP 2 — Preprocess (image vs video → frames)
-    console.log("🧠 Preprocessing media...");
+    logStep(1, "Preprocessing media");
     const frames = await preprocessMedia(path, mimetype);
+    logSuccess(`Frames extracted: ${frames.length}`);
 
-    console.log(`🖼️ Frames extracted: ${frames.length}`);
-    
     // STEP 3 — OCR (Tesseract.js)
-    console.log("🔍 Running OCR on frames...");
+    logStep(2, "Running OCR on frames");
     const ocrResults = await extractTextFromFrames(frames);
-    console.log("📝 OCR results:", ocrResults.length, "frames processed");
+    logSuccess(`OCR completed: ${ocrResults.filter(r => r.textFound).length}/${ocrResults.length} frames with text`);
 
     // STEP 4 — Vision Analysis (AWS Rekognition) - Enhanced for disasters
-    console.log("👁️ Running enhanced disaster/hazard analysis on frames...");
+    logStep(3, "Running vision analysis");
     const visionResults = await analyzeFrames(frames);
-    console.log("🖼️ Vision analysis results:", visionResults.length, "labels detected");
+    logSuccess(`Vision analysis: ${visionResults.length} labels detected`);
+    logSuccess(`Vision analysis: ${visionResults.length} labels detected`);
 
     // STEP 5 — Categorize Disasters and Generate Recommendations
-    console.log("🚨 Categorizing disasters and hazards...");
+    logStep(4, "Categorizing disasters");
     const disasterAnalysis = categorizeDisasters(visionResults);
     const emergencyRecommendations = getEmergencyRecommendations(disasterAnalysis);
-    console.log("🚨 Severity level:", disasterAnalysis.summary.severityLevel);
+    logSuccess(`Severity level: ${disasterAnalysis.summary.severityLevel}`);
 
     // STEP 6 — Generate Evidence Snippets
-    console.log("📋 Generating evidence snippets...");
+    logStep(5, "Generating evidence snippets");
     const snippets = generateSnippets(visionResults, ocrResults);
-    console.log("📋 Generated", snippets.length, "evidence snippets");
+    logSuccess(`Evidence generated: ${snippets.length} snippets`);
 
-    // STEP 7 — Upload original file to S3
-    console.log("☁️ Uploading original media to S3...");
-    const s3Result = await uploadToS3(
-      path,
-      originalname,
-      mimetype
-    );
+    // STEP 7 — LLM Incident Analysis (Groq API)
+    logStep(6, "Running LLM incident analysis");
+    const aiDecision = await analyzeIncident(snippets);
+    logSuccess(`LLM reasoning complete: ${aiDecision.incident_type} (confidence: ${(aiDecision.confidence * 100).toFixed(1)}%)`);
 
-    console.log("✅ S3 upload successful:", s3Result);
+    // STEP 8 — Confidence Gate + Final Incident Object (TASK 3)
+    logStep(7, "Applying confidence gate");
+    const finalIncident = createIncident(aiDecision, snippets);
+    logSuccess(`Confidence gate applied: ${finalIncident.status}`);
+    
+    if (finalIncident.status === "needs_human_review") {
+      console.log("👤 Human review triggered (confidence < 60%)");
+    }
 
-    // STEP 8 — Cleanup local temp file
+    // STEP 9 — Upload original file to S3 (optional - may fail if AWS not configured)
+    logStep(8, "Uploading to S3");
+    let s3Result = { bucket: "local", key: `local/${originalname}` };
+    try {
+      s3Result = await uploadToS3(
+        path,
+        originalname,
+        mimetype
+      );
+      logSuccess(`S3 upload: ${s3Result.key}`);
+    } catch (s3Error) {
+      console.log("⚠️ S3 upload skipped:", s3Error.message);
+      logSuccess("S3 upload skipped (using local storage)");
+    }
+
+    // STEP 10 — Cleanup local temp file
     deleteLocalFile(path);
 
-    // STEP 9 — Response (comprehensive disaster analysis)
+    // Log summary
+    logSummary(finalIncident, aiDecision);
+
+    // STEP 11 — Response (Final Incident Object + Full Analysis)
     return res.json({
+      // FINAL INCIDENT OBJECT (TASK 3 - Primary Response)
+      incident: finalIncident,
+      
+      // Additional context
       status: "processed",
       mediaType: mimetype,
       frameCount: frames.length,
       
-      // Evidence snippets (clean, explainable format)
-      snippets: snippets,
-      
-      // Vision analysis with ALL detected labels
+      // Vision analysis
       vision: visionResults,
       
-      // Disaster categorization and severity
+      // Disaster categorization
       disasters: disasterAnalysis,
       
       // Emergency recommendations
@@ -106,13 +133,18 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         visionLabelsDetected: visionResults.length,
         hazardsDetected: visionResults.filter(r => r.category === "hazard").length,
         disastersIdentified: disasterAnalysis.summary.totalDisasters,
-        snippetsGenerated: snippets.length
+        snippetsGenerated: snippets.length,
+        llmAnalysisCompleted: aiDecision.confidence > 0,
+        confidenceGatePassed: finalIncident.status === "auto_approved"
       }
     });
 
 
   } catch (err) {
-    console.error("❌ Upload / Processing error:", err);
+    logHeader("❌ PROCESSING ERROR");
+    console.error("Error:", err.message);
+    console.log("═".repeat(60) + "\n");
+    
     return res.status(500).json({
       error: "Upload or processing failed",
       details: err.message

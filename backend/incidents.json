@@ -1,0 +1,792 @@
+[
+  {
+    "incident_id": "4b121dbc-c98e-4533-b7d3-2569d2ef9f33",
+    "status": "auto_approved",
+    "ai_decision": {
+      "location_hint": "Market Road",
+      "recommended_action": "Dispatch fire department",
+      "confidence": 0.74,
+      "severity": 0.85,
+      "incident_type": "fire"
+    },
+    "evidence": [
+      {
+        "frame": "frame_01.jpg",
+        "confidence": 0.92,
+        "type": "fire",
+        "text": "DANGER"
+      }
+    ],
+    "timestamp": "2025-12-23T09:16:49.106Z"
+  },
+  {
+    "incident_id": "96be9cd0-0844-4d06-af07-a356f9bae65b",
+    "status": "needs_human_review",
+    "ai_decision": {
+      "location_hint": "Unknown",
+      "recommended_action": "Investigate",
+      "confidence": 0.45,
+      "severity": 0.6,
+      "incident_type": "flood"
+    },
+    "evidence": [
+      {
+        "frame": "frame_01.jpg",
+        "confidence": 0.72,
+        "type": "flood",
+        "text": null
+      }
+    ],
+    "timestamp": "2025-12-23T09:17:51.819Z"
+  },
+  {
+    "incident_id": "b77f0cfd-3d2f-4d94-bf14-394732dc0b5f",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:39:05.877Z"
+  },
+  {
+    "incident_id": "54160dbe-635c-44f3-9f77-485685ad1b92",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:39:11.726Z"
+  },
+  {
+    "incident_id": "9ea7933b-963c-4b95-b399-aec75ffc91ec",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:40:31.642Z"
+  },
+  {
+    "incident_id": "d09d8b90-4556-4aa3-97ff-551638dc2461",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:42:40.805Z"
+  },
+  {
+    "incident_id": "52f04efb-9d1f-4734-b43b-a39404eda7f5",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:42:53.520Z"
+  },
+  {
+    "incident_id": "61272f61-71cc-4cc6-98c3-0387c1dd7516",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:45:33.691Z"
+  },
+  {
+    "incident_id": "e3ca5ad9-d8c8-43ce-87be-5234e56c7e8e",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:47:32.472Z"
+  },
+  {
+    "incident_id": "69d98b07-487e-4406-8670-3a48f131125d",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:47:44.796Z"
+  },
+  {
+    "incident_id": "ddfd23dc-d6e7-48d2-bf67-804f9851c6e1",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:48:51.197Z"
+  },
+  {
+    "incident_id": "49819cf2-2bcc-49f3-9dea-c355324b8baf",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:48:57.396Z"
+  },
+  {
+    "incident_id": "0c32bd97-9265-4cd8-b87a-f883711529fc",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:52:38.140Z"
+  },
+  {
+    "incident_id": "fe7ccd1f-e2ac-4d0a-aead-705910c58f9a",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T09:53:02.014Z"
+  },
+  {
+    "incident_id": "be980160-b58c-447c-82ec-32f4fda67305",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:00:44.387Z"
+  },
+  {
+    "incident_id": "048d2ef7-8274-47bc-a801-25cfb8708cb2",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "fire",
+      "severity": 0.9,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch fire department immediately. Evacuate area.",
+      "confidence": 0.6859999999999999
+    },
+    "evidence": [
+      {
+        "type": "person",
+        "confidence": 0.99,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.98,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "fire",
+        "confidence": 0.97,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:03:07.347Z"
+  },
+  {
+    "incident_id": "65731532-5db2-4884-8cb6-6f3354caec52",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:05:45.165Z"
+  },
+  {
+    "incident_id": "0a85cc89-b336-4778-8f9b-c629a4abd937",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:06:46.972Z"
+  },
+  {
+    "incident_id": "5c952505-b02c-4674-8a2d-2b16e192355a",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:07:26.489Z"
+  },
+  {
+    "incident_id": "f9abb765-a0a0-4dbd-afbd-97cd7550df45",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:07:37.348Z"
+  },
+  {
+    "incident_id": "9bf55fe5-8593-41c3-85d3-92d34e3fa41e",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:07:45.329Z"
+  },
+  {
+    "incident_id": "2a8ef632-2edc-4373-a5db-87f92c46ed0b",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:07:45.623Z"
+  },
+  {
+    "incident_id": "06d25585-ba7c-45b7-b65b-349363437b5e",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:07:46.236Z"
+  },
+  {
+    "incident_id": "4c61a72f-d52a-4da0-b5dd-0666698bcc35",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:09:00.090Z"
+  },
+  {
+    "incident_id": "7264850d-a763-4af9-a4a4-f9d93ab47a87",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:10:54.507Z"
+  },
+  {
+    "incident_id": "6fa05e21-a660-4061-971f-9248ee294411",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:13:21.511Z"
+  },
+  {
+    "incident_id": "bd8ad0ef-e30f-42e3-ad11-254f62f1f8d5",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:16:22.765Z"
+  },
+  {
+    "incident_id": "02a44504-0757-4c71-8239-210b04188773",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:23:25.913Z"
+  },
+  {
+    "incident_id": "4d038d7b-6344-4327-a942-7e4016e7303a",
+    "status": "auto_approved",
+    "ai_decision": {
+      "incident_type": "flood",
+      "severity": 0.8,
+      "location_hint": "Unknown",
+      "recommended_action": "Dispatch rescue team. Issue flood warning to residents.",
+      "confidence": 0.6509999999999999
+    },
+    "evidence": [
+      {
+        "type": "flood",
+        "confidence": 1,
+        "text": null,
+        "frame": "frame_01.jpg"
+      },
+      {
+        "type": "vehicle",
+        "confidence": 0.86,
+        "text": null,
+        "frame": "frame_01.jpg"
+      }
+    ],
+    "timestamp": "2025-12-23T10:23:31.713Z"
+  }
+]

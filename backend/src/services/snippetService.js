@@ -12,14 +12,19 @@
 export function generateSnippets(visionResults, ocrResults) {
   const snippets = [];
   
+  // Handle empty inputs
+  if (!visionResults || visionResults.length === 0) {
+    return [];
+  }
+  
   // Allowed label types (strict filter)
   const allowedTypes = ['flood', 'fire', 'smoke', 'vehicle', 'person'];
   
   // Filter vision results by confidence > 70% and allowed types
   const filteredVision = visionResults.filter(result => {
-    if (result.confidence <= 0.70) return false;
+    if (!result || result.confidence <= 0.70) return false;
     
-    const labelLower = result.label.toLowerCase();
+    const labelLower = (result.label || '').toLowerCase();
     return allowedTypes.some(type => labelLower.includes(type));
   });
 

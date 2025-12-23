@@ -87,6 +87,12 @@ export async function analyzeImage(imagePath) {
 export async function analyzeFrames(frames) {
   const results = [];
 
+  // Handle empty frames
+  if (!frames || frames.length === 0) {
+    console.log("⚠️ No frames to analyze");
+    return [];
+  }
+
   console.log(`👁️ Starting enhanced disaster/hazard analysis for ${frames.length} frame(s)`);
 
   for (let i = 0; i < frames.length; i++) {
@@ -217,6 +223,23 @@ export function categorizeDisasters(visionResults) {
     other: []
   };
 
+  // Handle empty input
+  if (!visionResults || visionResults.length === 0) {
+    return {
+      disasters,
+      summary: {
+        totalDisasters: 0,
+        fireDetected: false,
+        floodDetected: false,
+        accidentDetected: false,
+        weatherHazard: false,
+        structuralDamage: false,
+        severityScore: 0,
+        severityLevel: 'Low'
+      }
+    };
+  }
+
   const disasterCategories = {
     fire: ['fire', 'flame', 'smoke', 'burning', 'blaze', 'inferno', 'combustion', 'ash'],
     flood: ['flood', 'water', 'flooding', 'submerged', 'inundation', 'overflow'],
@@ -226,6 +249,8 @@ export function categorizeDisasters(visionResults) {
   };
 
   visionResults.forEach(result => {
+    if (!result || !result.label) return;
+    
     const labelLower = result.label.toLowerCase();
     let categorized = false;
 
